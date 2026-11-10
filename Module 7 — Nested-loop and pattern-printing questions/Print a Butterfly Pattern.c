@@ -5,19 +5,42 @@ int main(){
     int n;
     printf("Enter the number lines you what to print pattern:");
     scanf("%d",&n);
-    for (int i=1;i<=n;i++){//rows
-        for(int j=1;j<=i/2;j++){ // loop for first triangle.
+
+    // Top half
+    for (int i = 1; i <= n / 2 + 1; i++) {
+
+        for (int j = 1; j <= i; j++) {
             printf("*");
         }
+
+        for (int j = 1; j <= 2 * (n / 2 + 1 - i); j++) {                 //2*(n/2+1-i) is used for spaces between the triangle.
+            printf(" ");
+        }
+
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+
         printf("\n");
-        // for(int k=n;k>=i/2;k--){//loop for spaces
-        //     printf("k");
-        // }
-        
-        // for(int l=i/2;l>=1;l--){
-        //     printf("*");
-        // }
-        // printf("\n");
     }
+
+    // Bottom half
+    for (int i = n / 2; i >= 1; i--) {
+
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+
+        for (int j = 1; j <= 2 * (n / 2 + 1 - i); j++) {
+            printf(" ");
+        }
+
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+
+        printf("\n");
+    }
+
     return 0;
 }
